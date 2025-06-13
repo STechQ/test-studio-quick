@@ -1,0 +1,235 @@
+let pjson = {
+	"pJson": [
+		{
+			"T": "Messaging",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_45",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"EndRender": {
+					"H": "let myTableItem= [{name : 'Frozens Yogurt', calories : 159, fat : '6.0', carbs : 24, protein : '4.0', iron : '1%', uniqId: 0},\r\n{name : 'Ice cream sandwich', calories : 237, fat : '9.0', carbs : 37, protein : '4.3', iron : '1%', uniqId: 1},\r\n{name : 'Eclair', calories : 262, fat : '16.0', carbs : 23, protein : '6.0', iron : '7%', uniqId: 2},\r\n{name : 'Cupcake', calories : 305, fat : '3.7', carbs : 67, protein : '4.3', iron : '8%', uniqId: 3},\r\n{name : 'Gingerbread',calories : 356, fat : '16.0', carbs : 49, protein : '3.9', iron : '16%', uniqId: 4},\r\n{name : 'Jelly bean', calories : 375,  fat : '0.0', carbs : 94, protein : '0.0', iron : '0%', uniqId: 5},\r\n{name : 'Lollipop', calories : 392, fat : '0.2', carbs : 98, protein : '0.0', iron : '2 %', uniqId: 6},\r\n{name : 'Honeycomb', calories : 408, fat : '3.2', carbs : 87, protein : '6.5', iron : '45%', uniqId: 7},\r\n{name : 'Donut', calories : 452, fat : '25.0', carbs : 51, protein : '4.9', iron : '22%', uniqId: 8},\r\n{name : 'KitKat', calories : 518, fat : '26.0', carbs : 65, protein : '7', iron:  '6 %', uniqId: 9}]\r\ncomponents.EdtrComp_1.items= myTableItem",
+					"HL": "TS"
+				}
+			},
+			"C": {},
+			"_Editor": {
+				"eID": "EdtrComp_45"
+			},
+			"O": {}
+		},
+		{
+			"T": "VDataTable",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_1",
+					"T": "prop"
+				},
+				"headers": {
+					"H": "[{ text = 'Dessert (100g serving)', align= 'start', sortable= false, value= 'name'},\n{ text = 'Calories', value= 'calories', sortable = true },\n{ text = 'Fat (g)', value= 'fat' },\n{ text = 'Carbs (g)', value= 'carbs' },\n{ text = 'Protein (g)', value= 'protein' },\n{ text = 'Iron (%)', value= 'iron' },\n{ text = 'Actions', value= 'actions' }]",
+					"T": "prop"
+				},
+				"itemsPerPage": {
+					"H": "10",
+					"T": "prop"
+				}
+			},
+			"E": {},
+			"C": {
+				"top": {
+					"c": [],
+					"cType": "slot"
+				},
+				"item.actions": {
+					"c": [
+						{
+							"T": "VBtn",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_2",
+									"T": "prop"
+								},
+								"xSmall": {
+									"H": "true",
+									"T": "prop"
+								}
+							},
+							"E": {
+								"click": {
+									"H": "\r\ndeclare var item;\r\nlet itemsLength = components.EdtrComp_1.items.length\r\nfor (let i=0; i<itemsLength; i++){\r\n  if(item.uniqId ==i ){\r\n    let newData =components.EdtrComp_1.items.indexOf(item)\r\n    components.EdtrComp_1.items.splice(newData,1)\r\n  }\r\n\r\n\r\n}\r\n",
+									"P": "mouseEvent:unknown | undefined",
+									"HL": "TS"
+								}
+							},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "VIcon",
+											"P": {
+												"ID": {
+													"H": "EdtrComp_10",
+													"T": "prop"
+												},
+												"text": {
+													"H": "'mdi-delete'",
+													"T": "text"
+												}
+											},
+											"E": {},
+											"C": {},
+											"_Editor": {
+												"eID": "EdtrComp_10"
+											},
+											"O": {
+												"cType": "child"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_2"
+							},
+							"O": {
+								"cType": "slot"
+							}
+						}
+					],
+					"cType": "scopedSlot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_1"
+			},
+			"O": {
+				"cType": "child"
+			}
+		}
+	],
+	"cJson": [
+		{
+			"T": "Messaging",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_45",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"EndRender": {
+					"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\nvar myTableItem = [{ name: 'Frozens Yogurt', calories: 159, fat: '6.0', carbs: 24, protein: '4.0', iron: '1%', uniqId: 0 },\r\n    { name: 'Ice cream sandwich', calories: 237, fat: '9.0', carbs: 37, protein: '4.3', iron: '1%', uniqId: 1 },\r\n    { name: 'Eclair', calories: 262, fat: '16.0', carbs: 23, protein: '6.0', iron: '7%', uniqId: 2 },\r\n    { name: 'Cupcake', calories: 305, fat: '3.7', carbs: 67, protein: '4.3', iron: '8%', uniqId: 3 },\r\n    { name: 'Gingerbread', calories: 356, fat: '16.0', carbs: 49, protein: '3.9', iron: '16%', uniqId: 4 },\r\n    { name: 'Jelly bean', calories: 375, fat: '0.0', carbs: 94, protein: '0.0', iron: '0%', uniqId: 5 },\r\n    { name: 'Lollipop', calories: 392, fat: '0.2', carbs: 98, protein: '0.0', iron: '2 %', uniqId: 6 },\r\n    { name: 'Honeycomb', calories: 408, fat: '3.2', carbs: 87, protein: '6.5', iron: '45%', uniqId: 7 },\r\n    { name: 'Donut', calories: 452, fat: '25.0', carbs: 51, protein: '4.9', iron: '22%', uniqId: 8 },\r\n    { name: 'KitKat', calories: 518, fat: '26.0', carbs: 65, protein: '7', iron: '6 %', uniqId: 9 }];\r\ncomponents.EdtrComp_1.items = myTableItem;\r\n",
+					"HL": "JS"
+				}
+			},
+			"C": {},
+			"_Editor": {
+				"eID": "EdtrComp_45"
+			},
+			"O": {
+				"cType": "child",
+				"compDomClasses": "newDropBorder"
+			}
+		},
+		{
+			"T": "VDataTable",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_1",
+					"T": "prop"
+				},
+				"headers": {
+					"H": "╬[]╠{}╠=╣text╩╠'Dessert (100g serving)'╩╩╠=╣align╩╠'start'╩╩╠=╣sortable╩╠false╩╩╠=╣value╩╠'name'╩╩╩╠{}╠=╣text╩╠'Calories'╩╩╠=╣value╩╠'calories'╩╩╠=╣sortable╩╠true╩╩╩╠{}╠=╣text╩╠'Fat (g)'╩╩╠=╣value╩╠'fat'╩╩╩╠{}╠=╣text╩╠'Carbs (g)'╩╩╠=╣value╩╠'carbs'╩╩╩╠{}╠=╣text╩╠'Protein (g)'╩╩╠=╣value╩╠'protein'╩╩╩╠{}╠=╣text╩╠'Iron (%)'╩╩╠=╣value╩╠'iron'╩╩╩╠{}╠=╣text╩╠'Actions'╩╩╠=╣value╩╠'actions'╩╩╩╩╩",
+					"T": "prop"
+				},
+				"itemsPerPage": {
+					"H": "╬10╩╩",
+					"T": "prop"
+				}
+			},
+			"E": {},
+			"C": {
+				"top": {
+					"c": [],
+					"cType": "slot"
+				},
+				"item.actions": {
+					"c": [
+						{
+							"T": "VBtn",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_2",
+									"T": "prop"
+								},
+								"xSmall": {
+									"H": "╬true╩╩",
+									"T": "prop"
+								}
+							},
+							"E": {
+								"click": {
+									"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\nvar itemsLength = components.EdtrComp_1.items.length;\r\nfor (var i = 0; i < itemsLength; i++) {\r\n    if (item.uniqId == i) {\r\n        var newData = components.EdtrComp_1.items.indexOf(item);\r\n        components.EdtrComp_1.items.splice(newData, 1);\r\n    }\r\n}\r\n",
+									"P": "mouseEvent:unknown | undefined",
+									"HL": "JS"
+								}
+							},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "VIcon",
+											"P": {
+												"ID": {
+													"H": "EdtrComp_10",
+													"T": "prop"
+												},
+												"text": {
+													"H": "╬'mdi-delete'╩╩",
+													"T": "text"
+												}
+											},
+											"E": {},
+											"C": {},
+											"_Editor": {
+												"eID": "EdtrComp_10"
+											},
+											"O": {
+												"cType": "child",
+												"compDomClasses": "v-icon notranslate mdi mdi-delete theme--light newDropBorder"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_2"
+							},
+							"O": {
+								"cType": "slot",
+								"compDomClasses": "v-btn v-btn--contained theme--light v-size--x-small newDropBorder"
+							}
+						}
+					],
+					"cType": "scopedSlot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_1"
+			},
+			"O": {
+				"cType": "child",
+				"compDomClasses": "v-data-table v-data-table--has-bottom theme--light newDropBorder"
+			}
+		}
+	],
+	"lrids": {},
+	"clrids": {},
+	"description": {},
+	"opt": {}
+};
+export default pjson

@@ -1,0 +1,853 @@
+let pjson = {
+	"pJson": [
+		{
+			"T": "VDataTable",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_1",
+					"T": "prop"
+				},
+				"headers": {
+					"H": "[{ text = 'Dessert (100g serving)', align= 'start', sortable= false, value= 'name'},\n{ text = 'Calories', value= 'calories', sortable = true },\n{ text = 'Fat (g)', value= 'fat' },\n{ text = 'Carbs (g)', value= 'carbs' },\n{ text = 'Protein (g)', value= 'protein' },\n{ text = 'Iron (%)', value= 'iron' }]",
+					"T": "prop"
+				},
+				"items": {
+					"H": "[{name = 'Frozens Yogurt', calories = 159, fat = '6.0', carbs = 24, protein = '4.0', iron = '1%', caloriesDisable='true', nameDisable='true', uniqId = 0},\n{name = 'Ice cream sandwich', calories = 237, fat = '9.0', carbs = 37, protein = '4.3', iron = '1%', proteinDisable='true' ,uniqId = 1},\n{name = 'Eclair', calories = 262, fat = '16.0', carbs = 23, protein = '6.0', iron = '7%', fatDisable='true', nameDisable='true' ,uniqId = 2},\n{name = 'Cupcake', calories = 305, fat = '3.7', carbs = 67, protein = '4.3', iron = '8%',nameDisable='true', caloriesDisable='true', proteinDisable='true' ,uniqId = 3},\n{name = 'Gingerbread',calories = 356, fat = '16.0', carbs = 49, protein = '3.9', iron = '16%' ,uniqId = 4},\n{name = 'Jelly bean', calories = 375,  fat = '0.0', carbs = 94, protein = '0.0', iron = '0%' ,uniqId = 5},\n{name = 'Lollipop', calories = 392, fat = '0.2', carbs = 98, protein = '0.0', iron = '2 %' ,uniqId = 6},\n{name = 'Honeycomb', calories = 408, fat = '3.2', carbs = 87, protein = '6.5', iron = '45%' ,uniqId = 7},\n{name = 'Donut', calories = 452, fat = '25.0', carbs = 51, protein = '4.9', iron = '22%' ,uniqId = 8},\n{name = 'KitKat', calories = 518, fat = '26.0', carbs = 65, protein = '7', iron=  '6 %' ,uniqId = 9}]",
+					"T": "prop"
+				},
+				"itemsPerPage": {
+					"H": "5",
+					"T": "prop"
+				},
+				"hideDefaultFooter": {
+					"H": "true",
+					"T": "prop"
+				},
+				"uniqueSlots": {
+					"H": "true",
+					"T": "prop"
+				},
+				"itemKey": {
+					"H": "'uniqId'",
+					"T": "prop"
+				},
+				"showSelect": {
+					"H": "false",
+					"T": "prop"
+				},
+				"selectableKey": {
+					"H": "'isSelectable'",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"click:row": {
+					"H": "// quick.EM.trace(row)\r\nquick.EM.trace(components.EdtrComp_1)\r\n\r\nquick.EM.trace(components.EdtrComp_1.items[0])",
+					"P": "index:any,row:IVDataTableClickRow",
+					"HL": "TS"
+				}
+			},
+			"C": {
+				"item.iron": {
+					"c": [
+						{
+							"T": "VBtn",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_3",
+									"T": "prop"
+								},
+								"color": {
+									"H": "'success'",
+									"T": "prop"
+								},
+								"regular": {
+									"H": "true",
+									"T": "prop"
+								}
+							},
+							"E": {
+								"click": {
+									"H": "components.EdtrComp_6.qValue=!components.EdtrComp_6.qValue\r\n\r\ndebugger\r\ndeclare var item;\r\n quick.EM.trace('mee: '+ item)\r\n for (let i =0; i<=10; i++)\r\n {\r\n      if(item.uniqId ==i ) \r\n      {\r\n           components.EdtrComp_17.qValue=components.EdtrComp_1.items[i].name\r\n     components.EdtrComp_18.qValue=components.EdtrComp_1.items[i].calories\r\n     components.EdtrComp_25.qValue=components.EdtrComp_1.items[i].fat\r\n     components.EdtrComp_26.qValue=components.EdtrComp_1.items[i].carbs\r\n     components.EdtrComp_27.qValue=components.EdtrComp_1.items[i].protein\r\n\r\n     components.EdtrComp_17.disabled=components.EdtrComp_1.items[i].nameDisable\r\n     components.EdtrComp_18.disabled=components.EdtrComp_1.items[i].caloriesDisable\r\n     components.EdtrComp_25.disabled=components.EdtrComp_1.items[i].fatDisable\r\n     components.EdtrComp_26.disabled=components.EdtrComp_1.items[i].carbsDisable\r\n     components.EdtrComp_27.disabled=components.EdtrComp_1.items[i].proteinDisable\r\n\r\n      }\r\n\r\n };\r\n\r\n\r\n",
+									"P": "mouseEvent:unknown | undefined",
+									"HL": "TS"
+								}
+							},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "QLabel",
+											"C": {},
+											"E": {},
+											"P": {
+												"ID": {
+													"H": "EdtrComp_4",
+													"T": "prop"
+												},
+												"text": {
+													"H": "'Edit'",
+													"T": "prop"
+												}
+											},
+											"_Editor": {
+												"eID": "EdtrComp_4"
+											},
+											"O": {
+												"cType": "child"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_3"
+							},
+							"O": {
+								"cType": "slot"
+							}
+						}
+					],
+					"cType": "scopedSlot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_1"
+			},
+			"O": {
+				"cType": "child"
+			}
+		},
+		{
+			"T": "VDialog",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_6",
+					"T": "prop"
+				},
+				"width": {
+					"H": "700",
+					"T": "prop"
+				},
+				"eager": {
+					"H": "true",
+					"T": "prop"
+				}
+			},
+			"E": {},
+			"C": {
+				"default": {
+					"c": [
+						{
+							"T": "VRow",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_2",
+									"T": "prop"
+								},
+								"class": {
+									"H": "'col-md-12 white'",
+									"T": "class"
+								}
+							},
+							"E": {},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "VContainer",
+											"P": {
+												"ID": {
+													"H": "EdtrComp_23",
+													"T": "prop"
+												}
+											},
+											"E": {},
+											"C": {
+												"default": {
+													"c": [
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_17",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "'Dessert'",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "'true'",
+																	"T": "prop"
+																},
+																"disabled": {
+																	"H": "false",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_17"
+															},
+															"O": {
+																"cType": "child"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_18",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "'Calories'",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "'true'",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_18"
+															},
+															"O": {
+																"cType": "child"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_25",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "'Fat'",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "'true'",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_25"
+															},
+															"O": {
+																"cType": "child"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_26",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "'Carbs'",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "'true'",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_26"
+															},
+															"O": {
+																"cType": "child"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_27",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "'Protein'",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "'true'",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_27"
+															},
+															"O": {
+																"cType": "child"
+															}
+														}
+													],
+													"cType": "slot"
+												}
+											},
+											"_Editor": {
+												"eID": "EdtrComp_23"
+											},
+											"O": {
+												"cType": "slot"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_2"
+							},
+							"O": {
+								"cType": "slot"
+							}
+						},
+						{
+							"T": "VRow",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_28",
+									"T": "prop"
+								},
+								"class": {
+									"H": "'white d-flex justify-center'",
+									"T": "class"
+								}
+							},
+							"E": {},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "VBtn",
+											"P": {
+												"ID": {
+													"H": "EdtrComp_10",
+													"T": "prop"
+												},
+												"color": {
+													"H": "'success'",
+													"T": "prop"
+												},
+												"regular": {
+													"H": "true",
+													"T": "prop"
+												}
+											},
+											"E": {
+												"click": {
+													"H": "\r\ndebugger\r\nquick.EM.trace('Origin' + components.EdtrComp_6.origin)\r\nlet myItem = components.EdtrComp_1.items\r\n\r\nmyItem.forEach(item => {\r\n\r\n   let b = components.EdtrComp_1.items.indexOf(item)\r\n\r\n   quick.EM.trace(b)\r\n   quick.EM.trace(components.EdtrComp_1.items[b])\r\n   if (components.EdtrComp_17.qValue== components.EdtrComp_1.items[b].name){\r\n   components.EdtrComp_1.items[b].name = components.EdtrComp_17.qValue\r\n   components.EdtrComp_1.items[b].calories = components.EdtrComp_18.qValue\r\n   components.EdtrComp_1.items[b].fat = components.EdtrComp_25.qValue\r\n   components.EdtrComp_1.items[b].carbs = components.EdtrComp_26.qValue\r\n   components.EdtrComp_1.items[b].protein = components.EdtrComp_27.qValue\r\n   }\r\n\r\n   \r\n\r\n});\r\n\r\ncomponents.EdtrComp_6.qValue = false\r\n\r\n\r\n\r\n",
+													"P": "mouseEvent:unknown | undefined",
+													"HL": "TS"
+												}
+											},
+											"C": {
+												"default": {
+													"c": [
+														{
+															"T": "QLabel",
+															"C": {},
+															"E": {},
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_11",
+																	"T": "prop"
+																},
+																"text": {
+																	"H": "'Save'",
+																	"T": "prop"
+																}
+															},
+															"_Editor": {
+																"eID": "EdtrComp_11"
+															},
+															"O": {
+																"cType": "child"
+															}
+														}
+													],
+													"cType": "slot"
+												}
+											},
+											"_Editor": {
+												"eID": "EdtrComp_10"
+											},
+											"O": {
+												"cType": "slot"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_28"
+							},
+							"O": {
+								"cType": "slot"
+							}
+						}
+					],
+					"cType": "slot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_6"
+			},
+			"O": {
+				"cType": "slot"
+			}
+		}
+	],
+	"cJson": [
+		{
+			"T": "VDataTable",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_1",
+					"T": "prop"
+				},
+				"headers": {
+					"H": "╬[]╠{}╠=╣text╩╠'Dessert (100g serving)'╩╩╠=╣align╩╠'start'╩╩╠=╣sortable╩╠false╩╩╠=╣value╩╠'name'╩╩╩╠{}╠=╣text╩╠'Calories'╩╩╠=╣value╩╠'calories'╩╩╠=╣sortable╩╠true╩╩╩╠{}╠=╣text╩╠'Fat (g)'╩╩╠=╣value╩╠'fat'╩╩╩╠{}╠=╣text╩╠'Carbs (g)'╩╩╠=╣value╩╠'carbs'╩╩╩╠{}╠=╣text╩╠'Protein (g)'╩╩╠=╣value╩╠'protein'╩╩╩╠{}╠=╣text╩╠'Iron (%)'╩╩╠=╣value╩╠'iron'╩╩╩╩╩",
+					"T": "prop"
+				},
+				"items": {
+					"H": "╬[]╠{}╠=╣name╩╠'Frozens Yogurt'╩╩╠=╣calories╩╠159╩╩╠=╣fat╩╠'6.0'╩╩╠=╣carbs╩╠24╩╩╠=╣protein╩╠'4.0'╩╩╠=╣iron╩╠'1%'╩╩╠=╣caloriesDisable╩╠'true'╩╩╠=╣nameDisable╩╠'true'╩╩╠=╣uniqId╩╠0╩╩╩╠{}╠=╣name╩╠'Ice cream sandwich'╩╩╠=╣calories╩╠237╩╩╠=╣fat╩╠'9.0'╩╩╠=╣carbs╩╠37╩╩╠=╣protein╩╠'4.3'╩╩╠=╣iron╩╠'1%'╩╩╠=╣proteinDisable╩╠'true'╩╩╠=╣uniqId╩╠1╩╩╩╠{}╠=╣name╩╠'Eclair'╩╩╠=╣calories╩╠262╩╩╠=╣fat╩╠'16.0'╩╩╠=╣carbs╩╠23╩╩╠=╣protein╩╠'6.0'╩╩╠=╣iron╩╠'7%'╩╩╠=╣fatDisable╩╠'true'╩╩╠=╣nameDisable╩╠'true'╩╩╠=╣uniqId╩╠2╩╩╩╠{}╠=╣name╩╠'Cupcake'╩╩╠=╣calories╩╠305╩╩╠=╣fat╩╠'3.7'╩╩╠=╣carbs╩╠67╩╩╠=╣protein╩╠'4.3'╩╩╠=╣iron╩╠'8%'╩╩╠=╣nameDisable╩╠'true'╩╩╠=╣caloriesDisable╩╠'true'╩╩╠=╣proteinDisable╩╠'true'╩╩╠=╣uniqId╩╠3╩╩╩╠{}╠=╣name╩╠'Gingerbread'╩╩╠=╣calories╩╠356╩╩╠=╣fat╩╠'16.0'╩╩╠=╣carbs╩╠49╩╩╠=╣protein╩╠'3.9'╩╩╠=╣iron╩╠'16%'╩╩╠=╣uniqId╩╠4╩╩╩╠{}╠=╣name╩╠'Jelly bean'╩╩╠=╣calories╩╠375╩╩╠=╣fat╩╠'0.0'╩╩╠=╣carbs╩╠94╩╩╠=╣protein╩╠'0.0'╩╩╠=╣iron╩╠'0%'╩╩╠=╣uniqId╩╠5╩╩╩╠{}╠=╣name╩╠'Lollipop'╩╩╠=╣calories╩╠392╩╩╠=╣fat╩╠'0.2'╩╩╠=╣carbs╩╠98╩╩╠=╣protein╩╠'0.0'╩╩╠=╣iron╩╠'2 %'╩╩╠=╣uniqId╩╠6╩╩╩╠{}╠=╣name╩╠'Honeycomb'╩╩╠=╣calories╩╠408╩╩╠=╣fat╩╠'3.2'╩╩╠=╣carbs╩╠87╩╩╠=╣protein╩╠'6.5'╩╩╠=╣iron╩╠'45%'╩╩╠=╣uniqId╩╠7╩╩╩╠{}╠=╣name╩╠'Donut'╩╩╠=╣calories╩╠452╩╩╠=╣fat╩╠'25.0'╩╩╠=╣carbs╩╠51╩╩╠=╣protein╩╠'4.9'╩╩╠=╣iron╩╠'22%'╩╩╠=╣uniqId╩╠8╩╩╩╠{}╠=╣name╩╠'KitKat'╩╩╠=╣calories╩╠518╩╩╠=╣fat╩╠'26.0'╩╩╠=╣carbs╩╠65╩╩╠=╣protein╩╠'7'╩╩╠=╣iron╩╠'6 %'╩╩╠=╣uniqId╩╠9╩╩╩╩╩",
+					"T": "prop"
+				},
+				"itemsPerPage": {
+					"H": "╬5╩╩",
+					"T": "prop"
+				},
+				"hideDefaultFooter": {
+					"H": "╬true╩╩",
+					"T": "prop"
+				},
+				"uniqueSlots": {
+					"H": "╬true╩╩",
+					"T": "prop"
+				},
+				"itemKey": {
+					"H": "╬'uniqId'╩╩",
+					"T": "prop"
+				},
+				"showSelect": {
+					"H": "╬false╩╩",
+					"T": "prop"
+				},
+				"selectableKey": {
+					"H": "╬'isSelectable'╩╩",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"click:row": {
+					"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\n// quick.EM.trace(row)\r\nquick.EM.trace(components.EdtrComp_1);\r\nquick.EM.trace(components.EdtrComp_1.items[0]);\r\n",
+					"P": "index:any,row:IVDataTableClickRow",
+					"HL": "JS"
+				}
+			},
+			"C": {
+				"item.iron": {
+					"c": [
+						{
+							"T": "VBtn",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_3_q_4",
+									"T": "prop"
+								},
+								"color": {
+									"H": "╬'success'╩╩",
+									"T": "prop"
+								},
+								"regular": {
+									"H": "╬true╩╩",
+									"T": "prop"
+								}
+							},
+							"E": {
+								"click": {
+									"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\ncomponents.EdtrComp_6.qValue = !components.EdtrComp_6.qValue;\r\ndebugger;\r\nquick.EM.trace('mee: ' + item);\r\nfor (var i = 0; i <= 10; i++) {\r\n    if (item.uniqId == i) {\r\n        components.EdtrComp_17.qValue = components.EdtrComp_1.items[i].name;\r\n        components.EdtrComp_18.qValue = components.EdtrComp_1.items[i].calories;\r\n        components.EdtrComp_25.qValue = components.EdtrComp_1.items[i].fat;\r\n        components.EdtrComp_26.qValue = components.EdtrComp_1.items[i].carbs;\r\n        components.EdtrComp_27.qValue = components.EdtrComp_1.items[i].protein;\r\n        components.EdtrComp_17.disabled = components.EdtrComp_1.items[i].nameDisable;\r\n        components.EdtrComp_18.disabled = components.EdtrComp_1.items[i].caloriesDisable;\r\n        components.EdtrComp_25.disabled = components.EdtrComp_1.items[i].fatDisable;\r\n        components.EdtrComp_26.disabled = components.EdtrComp_1.items[i].carbsDisable;\r\n        components.EdtrComp_27.disabled = components.EdtrComp_1.items[i].proteinDisable;\r\n    }\r\n}\r\n;\r\n",
+									"P": "mouseEvent:unknown | undefined",
+									"HL": "JS"
+								}
+							},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "QLabel",
+											"C": {},
+											"E": {},
+											"P": {
+												"ID": {
+													"H": "EdtrComp_4",
+													"T": "prop"
+												},
+												"text": {
+													"H": "╬'Edit'╩╩",
+													"T": "prop"
+												}
+											},
+											"_Editor": {
+												"eID": "EdtrComp_4"
+											},
+											"O": {
+												"cType": "child",
+												"compDomClasses": "q-label newDropBorder"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_3"
+							},
+							"O": {
+								"cType": "slot",
+								"compDomClasses": "v-btn v-btn--contained theme--light v-size--default success newDropBorder"
+							}
+						}
+					],
+					"cType": "scopedSlot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_1"
+			},
+			"O": {
+				"cType": "child",
+				"compDomClasses": "v-data-table theme--light newDropBorder"
+			}
+		},
+		{
+			"T": "VDialog",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_6",
+					"T": "prop"
+				},
+				"width": {
+					"H": "╬700╩╩",
+					"T": "prop"
+				},
+				"eager": {
+					"H": "╬true╩╩",
+					"T": "prop"
+				}
+			},
+			"E": {},
+			"C": {
+				"default": {
+					"c": [
+						{
+							"T": "VRow",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_2",
+									"T": "prop"
+								},
+								"class": {
+									"H": "╬'col-md-12 white'╩╩",
+									"T": "class"
+								}
+							},
+							"E": {},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "VContainer",
+											"P": {
+												"ID": {
+													"H": "EdtrComp_23",
+													"T": "prop"
+												}
+											},
+											"E": {},
+											"C": {
+												"default": {
+													"c": [
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_17",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "╬'Dessert'╩╩",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "╬'true'╩╩",
+																	"T": "prop"
+																},
+																"disabled": {
+																	"H": "╬false╩╩",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_17"
+															},
+															"O": {
+																"cType": "child",
+																"compDomClasses": "v-input theme--light v-text-field v-text-field--is-booted undefined"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_18",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "╬'Calories'╩╩",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "╬'true'╩╩",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_18"
+															},
+															"O": {
+																"cType": "child",
+																"compDomClasses": "v-input theme--light v-text-field v-text-field--is-booted undefined"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_25",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "╬'Fat'╩╩",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "╬'true'╩╩",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_25"
+															},
+															"O": {
+																"cType": "child",
+																"compDomClasses": "v-input theme--light v-text-field v-text-field--is-booted undefined"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_26",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "╬'Carbs'╩╩",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "╬'true'╩╩",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_26"
+															},
+															"O": {
+																"cType": "child",
+																"compDomClasses": "v-input theme--light v-text-field v-text-field--is-booted undefined"
+															}
+														},
+														{
+															"T": "VTextField",
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_27",
+																	"T": "prop"
+																},
+																"label": {
+																	"H": "╬'Protein'╩╩",
+																	"T": "prop"
+																},
+																"regular": {
+																	"H": "╬'true'╩╩",
+																	"T": "prop"
+																}
+															},
+															"E": {},
+															"C": {},
+															"_Editor": {
+																"eID": "EdtrComp_27"
+															},
+															"O": {
+																"cType": "child",
+																"compDomClasses": "v-input theme--light v-text-field v-text-field--is-booted undefined"
+															}
+														}
+													],
+													"cType": "slot"
+												}
+											},
+											"_Editor": {
+												"eID": "EdtrComp_23"
+											},
+											"O": {
+												"cType": "slot",
+												"compDomClasses": "container"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_2"
+							},
+							"O": {
+								"cType": "slot",
+								"compDomClasses": "row col-md-12 white"
+							}
+						},
+						{
+							"T": "VRow",
+							"P": {
+								"ID": {
+									"H": "EdtrComp_28",
+									"T": "prop"
+								},
+								"class": {
+									"H": "╬'white d-flex justify-center'╩╩",
+									"T": "class"
+								}
+							},
+							"E": {},
+							"C": {
+								"default": {
+									"c": [
+										{
+											"T": "VBtn",
+											"P": {
+												"ID": {
+													"H": "EdtrComp_10",
+													"T": "prop"
+												},
+												"color": {
+													"H": "╬'success'╩╩",
+													"T": "prop"
+												},
+												"regular": {
+													"H": "╬true╩╩",
+													"T": "prop"
+												}
+											},
+											"E": {
+												"click": {
+													"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\ndebugger;\r\nquick.EM.trace('Origin' + components.EdtrComp_6.origin);\r\nvar myItem = components.EdtrComp_1.items;\r\nmyItem.forEach(function (item) {\r\n    var b = components.EdtrComp_1.items.indexOf(item);\r\n    quick.EM.trace(b);\r\n    quick.EM.trace(components.EdtrComp_1.items[b]);\r\n    if (components.EdtrComp_17.qValue == components.EdtrComp_1.items[b].name) {\r\n        components.EdtrComp_1.items[b].name = components.EdtrComp_17.qValue;\r\n        components.EdtrComp_1.items[b].calories = components.EdtrComp_18.qValue;\r\n        components.EdtrComp_1.items[b].fat = components.EdtrComp_25.qValue;\r\n        components.EdtrComp_1.items[b].carbs = components.EdtrComp_26.qValue;\r\n        components.EdtrComp_1.items[b].protein = components.EdtrComp_27.qValue;\r\n    }\r\n});\r\ncomponents.EdtrComp_6.qValue = false;\r\n",
+													"P": "mouseEvent:unknown | undefined",
+													"HL": "JS"
+												}
+											},
+											"C": {
+												"default": {
+													"c": [
+														{
+															"T": "QLabel",
+															"C": {},
+															"E": {},
+															"P": {
+																"ID": {
+																	"H": "EdtrComp_11",
+																	"T": "prop"
+																},
+																"text": {
+																	"H": "╬'Save'╩╩",
+																	"T": "prop"
+																}
+															},
+															"_Editor": {
+																"eID": "EdtrComp_11"
+															},
+															"O": {
+																"cType": "child",
+																"compDomClasses": "q-label "
+															}
+														}
+													],
+													"cType": "slot"
+												}
+											},
+											"_Editor": {
+												"eID": "EdtrComp_10"
+											},
+											"O": {
+												"cType": "slot",
+												"compDomClasses": "v-btn v-btn--contained theme--light v-size--default success"
+											}
+										}
+									],
+									"cType": "slot"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_28"
+							},
+							"O": {
+								"cType": "slot",
+								"compDomClasses": "row white d-flex justify-center"
+							}
+						}
+					],
+					"cType": "slot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_6"
+			},
+			"O": {
+				"cType": "slot",
+				"compDomClasses": "newDropBorder"
+			}
+		}
+	],
+	"lrids": {},
+	"clrids": {},
+	"description": {},
+	"opt": {}
+};
+export default pjson

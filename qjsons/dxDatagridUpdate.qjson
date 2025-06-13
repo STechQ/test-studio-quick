@@ -1,0 +1,158 @@
+let pjson = {
+	"pJson": [
+		{
+			"T": "VBtn",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_7",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"click": {
+					"H": "let isSecondState= quick.store.get('isSecondState');\r\ndeclare var data;\r\nquick.EM.trace('isSecondState: ' + isSecondState)\r\nif (isSecondState && isSecondState != null) {\r\n    components.datagrid.dataSource=[{data:'first state'}]\r\n    quick.store.set('isSecondState', false)\r\n} else {\r\n    components.datagrid.dataSource=[{data:'second state'}]\r\n    quick.store.set('isSecondState', true)\r\n}\r\nquick.Quick.updateComponent(components.datagrid)\r\nquick.EM.trace('dataGrid dataSource: ' + components.datagrid.dataSource)",
+					"P": "mouseEvent:unknown | undefined",
+					"HL": "TS"
+				}
+			},
+			"C": {
+				"default": {
+					"c": [
+						{
+							"T": "QLabel",
+							"C": {},
+							"E": {},
+							"P": {
+								"ID": {
+									"H": "EdtrComp_8",
+									"T": "prop"
+								},
+								"text": {
+									"H": "'Test Button'",
+									"T": "prop"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_8"
+							},
+							"O": {
+								"cType": "child"
+							}
+						}
+					],
+					"cType": "slot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_7"
+			},
+			"O": {
+				"cType": "slot"
+			}
+		},
+		{
+			"T": "DxDataGrid",
+			"P": {
+				"ID": {
+					"H": "datagrid",
+					"T": "prop"
+				},
+				"dataSource": {
+					"H": "[{data='first state'}]",
+					"T": "prop"
+				}
+			},
+			"E": {},
+			"C": {},
+			"_Editor": {
+				"eID": "EdtrComp_1"
+			},
+			"O": {
+				"forceUpdateAfterPropertySetting": true,
+				"cType": "child"
+			}
+		}
+	],
+	"cJson": [
+		{
+			"T": "VBtn",
+			"P": {
+				"ID": {
+					"H": "EdtrComp_7",
+					"T": "prop"
+				}
+			},
+			"E": {
+				"click": {
+					"H": "Object.defineProperty(exports, \"__esModule\", { value: true });\r\nvar isSecondState = quick.store.get('isSecondState');\r\nquick.EM.trace('isSecondState: ' + isSecondState);\r\nif (isSecondState && isSecondState != null) {\r\n    components.datagrid.dataSource = [{ data: 'first state' }];\r\n    quick.store.set('isSecondState', false);\r\n}\r\nelse {\r\n    components.datagrid.dataSource = [{ data: 'second state' }];\r\n    quick.store.set('isSecondState', true);\r\n}\r\nquick.Quick.updateComponent(components.datagrid);\r\nquick.EM.trace('dataGrid dataSource: ' + components.datagrid.dataSource);\r\n",
+					"P": "mouseEvent:unknown | undefined",
+					"HL": "JS"
+				}
+			},
+			"C": {
+				"default": {
+					"c": [
+						{
+							"T": "QLabel",
+							"C": {},
+							"E": {},
+							"P": {
+								"ID": {
+									"H": "EdtrComp_8",
+									"T": "prop"
+								},
+								"text": {
+									"H": "╬'Test Button'╩╩",
+									"T": "prop"
+								}
+							},
+							"_Editor": {
+								"eID": "EdtrComp_8"
+							},
+							"O": {
+								"cType": "child",
+								"compDomClasses": "q-label newDropBorder"
+							}
+						}
+					],
+					"cType": "slot"
+				}
+			},
+			"_Editor": {
+				"eID": "EdtrComp_7"
+			},
+			"O": {
+				"cType": "slot",
+				"compDomClasses": "v-btn v-btn--contained theme--light v-size--default newDropBorder"
+			}
+		},
+		{
+			"T": "DxDataGrid",
+			"P": {
+				"ID": {
+					"H": "datagrid",
+					"T": "prop"
+				},
+				"dataSource": {
+					"H": "╬[]╠{}╠=╣data╩╠'first state'╩╩╩╩╩",
+					"T": "prop"
+				}
+			},
+			"E": {},
+			"C": {},
+			"_Editor": {
+				"eID": "EdtrComp_1"
+			},
+			"O": {
+				"forceUpdateAfterPropertySetting": true,
+				"cType": "child",
+				"compDomClasses": "dx-widget dx-visibility-change-handler newDropBorder"
+			}
+		}
+	],
+	"lrids": {},
+	"clrids": {},
+	"description": {},
+	"opt": {}
+};
+export default pjson
