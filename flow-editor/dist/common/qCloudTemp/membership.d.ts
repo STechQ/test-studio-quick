@@ -52,7 +52,6 @@ export interface IOrganizationFeatures {
     codeAssistant?: boolean;
     appVersion?: boolean;
     externalIntegration?: boolean;
-    createUIFeature?: boolean;
 }
 export interface IOrganizationCalculatedInfo {
     appCount: number;

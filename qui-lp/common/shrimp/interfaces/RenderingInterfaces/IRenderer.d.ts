@@ -87,7 +87,7 @@ export interface ISettingsQJsonContext extends IContextItem {
     AlertChangeHook: Hook<() => void>;
     SetPipelineQjson(qjson: IQJSon): Promise<void>;
     GetPipelineQjson(): IQJSon | undefined;
-    TriggerPipeline(methodName: string, methodArgs: Record<string, any>): void;
+    TriggerPipeline(methodName: string, methodArgs: Record<string, any>): Promise<any> | undefined;
     RerenderPipelineQjson(): Promise<void> | undefined;
     SetAlertQjson(qjson: IQJSon): void;
     GetAlertQjson(): IQJSon | undefined;
