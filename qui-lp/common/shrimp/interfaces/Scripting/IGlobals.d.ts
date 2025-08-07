@@ -888,13 +888,7 @@ export interface IGlobals_Quick {
         } | undefined;
     }) => void;
     closeAlert?: () => void;
-    /**
-     * @deprecated host.trigger is depreciated please use "const <yourContainerData> = await quick.container.<functionName>();"
-     */
     host: {
-        /**
-         * @deprecated host.trigger is depreciated please use "const <yourContainerData> = await quick.container.<functionName>();"
-         */
         trigger: (functionName: string, params: Record<string, any>) => Promise<IHostResponseData> | undefined;
     };
     isEditMode: boolean;
