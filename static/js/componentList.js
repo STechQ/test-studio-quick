@@ -38,6 +38,10 @@ var componentOptions = {
             options: ["'number'", "'text'", "'password'"],
             editorDefaultValue: "'text'"
         },
+        inputMode: {
+            type: String,
+            options: ["'text'", "'numeric'"]
+        },
         preventPaste: {
             type: Boolean,
             editorDefaultValue: "true"
@@ -5347,7 +5351,7 @@ nextIcon = 'mdi-plus'}`
             editorDefaultValue: "false"
         },
         src: {
-            default: "",
+            editorDefaultValue: "''",
             type: String
         },
         pdfToolbarBackgroundColor: {
