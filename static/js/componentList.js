@@ -5300,6 +5300,9 @@ nextIcon = 'mdi-plus'}`
         },
         tabindex: {
             type: "number | string"
+        },
+        readonly: {
+            type: Boolean
         }
     },
     QDynamicFields: {
@@ -5374,7 +5377,15 @@ nextIcon = 'mdi-plus'}`
         },
         tabindex: {
             type: "number | string"
-        }
+        },
+        securityErrorMessage: {
+            editorDefaultValue: "'securityErrorMessage'",
+            type: String,
+        },
+        securityErrorMessageIcon: {
+            type: String,
+            editorDefaultValue: "'mdi-home'"
+        },
     },
     DxPaging: {
         pageSize: {
