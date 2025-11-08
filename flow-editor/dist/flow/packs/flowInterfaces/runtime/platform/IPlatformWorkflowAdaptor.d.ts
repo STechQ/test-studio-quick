@@ -4,17 +4,14 @@ import { IWorkflowContext } from "../../../../../common/everything/workflow/runt
 import { IWorkflowIncomingRequest } from "../../../../../common/everything/workflow/runtimeObjects/IWorkflowIncomingRequest";
 import { IMongoDBTransactionQueue } from "../../../../../common/runtime/infrastructure/mongo/IDataStoreManager";
 import { MongoDBManager } from "../../../../../common/runtime/infrastructure/mongo/mongoDBManager";
-import { IRestServiceCallPropType } from "../../../flowComponents/runtime/restServiceCall";
 import { DataInstance } from "../../../../../common/everything/workflow/runtimeObjects/DataInstance";
 import { IContext } from "../../../../../common/everything/workflow/runtimeObjects/IContext";
 import { IDataSearchParams, IDataSearchResult } from "../../../../../process/workflowManager/helpers/DataSearchEngine.js";
 import { CustomType } from "../../../../../common/everything/workflow/runtimemodels/types";
 import { IFile } from "../../../../../common/everything/workflow/runtimeObjects/namedobjects/IFile";
 import { IActionData } from "../../../../../common/everything/workflow/runtimeObjects/IAction";
-import { IModelForWorkflow } from "../../../../../common/qCloudTemp/quickCloud";
 export interface IPlatformWFFAdaptor {
     flowExecutor: (prop: StepFlowModelPropType) => Promise<any>;
-    restServiceExecutor: (prop: IRestServiceCallPropType) => Promise<any>;
     soapServiceExecutor: (prop: StepFlowModelPropType) => Promise<any>;
     keyExecutor: (prop: ICounterPropType) => Promise<any>;
     workflowDb: () => {
@@ -32,8 +29,10 @@ export interface IPlatformWFFAdaptor {
     getConstant: (constantId: string) => Promise<string | undefined>;
     privateOps: {
         getDb: () => Promise<{
-            trxQueue: IMongoDBTransactionQueue | undefined;
             dsManager: MongoDBManager;
+        }>;
+        getTransactionQueue: () => Promise<{
+            trxQueue: IMongoDBTransactionQueue | undefined;
         }>;
     };
     wfe: {
@@ -51,7 +50,6 @@ export interface IPlatformWFFAdaptor {
         };
     };
     log: (message: string, ...optionalParams: Array<any>) => void;
-    getModelbyID: (key: string) => Promise<IModelForWorkflow>;
 }
 export type CompleteActionType = "complete" | "cancel" | "return";
 export interface IDataSearchResponse extends IDataSearchResult {
