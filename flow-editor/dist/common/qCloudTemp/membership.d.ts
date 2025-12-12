@@ -46,6 +46,7 @@ export interface IEditorTypes {
     store?: boolean;
     certificate?: boolean;
     container?: boolean;
+    backend?: boolean;
 }
 export interface IOrganizationFeatures {
     multipleCss?: boolean;
