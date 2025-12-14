@@ -1,9 +1,9 @@
 import { Store } from "../everything/store/designtimemodels/IStoreModel";
-import { IStudioUIModelBase } from "../everything/studio/ui/IStudioUIModelBase";
+import { IDataModelBase } from "../everything/studio/ui/IStudioUIModelBase";
 type findObjectCBType = (objectId: string) => Promise<any>;
 export declare const generateFlowIntellisense: (models: {
-    dataTypeModels?: Array<IStudioUIModelBase>;
-    dataSetModels?: Array<IStudioUIModelBase>;
+    dataTypeModels?: Array<IDataModelBase>;
+    dataSetModels?: Array<IDataModelBase>;
 }, findObjectCB: findObjectCBType, options: {
     store?: Store;
 }) => Promise<string>;

@@ -17,4 +17,10 @@ export interface IStudioUIModelBase extends IStudioUIObjectBase {
     path: string;
     fullPath?: string;
 }
+export interface IDataModelBase {
+    ID: string;
+    name: string;
+    modelType: ModelType;
+    modelBody?: any;
+}
 //# sourceMappingURL=IStudioUIModelBase.d.ts.map
