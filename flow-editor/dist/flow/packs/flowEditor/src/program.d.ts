@@ -38,7 +38,7 @@ export declare class Program implements IFlowEditorProgram {
     getState(): IFlowEditorState;
     setState(state?: IFlowEditorState): void;
     setReadonly(readonly: boolean): void;
-    setFuncType(funcType: "flow" | "workflow" | "befunc"): void;
+    setIsWorkFlow(isWorkFlow: boolean): void;
     setSchema(schema: Store): void;
     undo(): Promise<boolean>;
     redo(): Promise<boolean>;

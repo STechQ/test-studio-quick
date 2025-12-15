@@ -10,9 +10,8 @@ export declare abstract class ExecutionContext<TStore extends IExecutionContextS
     private static _currentContext;
     static get isInitted(): boolean;
     static get current(): ExecutionContext<IExecutionContextStore>;
-    readonly name: string;
     private readonly asyncLocalStorage;
-    constructor(name: string);
+    constructor();
     startScope<TScopeRetType>(storeObject: TStore, scope: () => TScopeRetType): TScopeRetType;
     tryGetScopeStore(): TStore | undefined;
     getScopeStore(): TStore;

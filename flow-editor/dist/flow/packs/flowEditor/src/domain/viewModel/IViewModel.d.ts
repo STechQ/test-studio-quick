@@ -57,7 +57,7 @@ export interface IViewModel {
     store: Store;
     nestedStore: INestedStore;
     readonly: boolean;
-    funcType?: "flow" | "workflow" | "befunc";
+    isWorkFlow?: boolean;
     name?: string;
     _name?: string;
     selectedSwitchStepId?: string;

@@ -6,7 +6,7 @@ export interface IState {
     setState(state?: IFlowEditorState): void;
     setSchema(schema: Store): void;
     setReadonly(readonly: boolean): void;
-    setFuncType(flowType: "flow" | "workflow" | "befunc"): void;
+    setIsWorkFlow(isWorkFlow: boolean): void;
     getEditable(): boolean;
     updateModified(status: IModifiedStatus): void;
     centerSelectedStep(): void;

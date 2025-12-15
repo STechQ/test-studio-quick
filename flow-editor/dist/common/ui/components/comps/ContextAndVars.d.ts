@@ -6,11 +6,6 @@ interface IContextAndVarsProps {
         name: string;
         tooltip?: string;
     }>;
-    dataSets: Array<{
-        ID: string;
-        name: string;
-        tooltip?: string;
-    }>;
     workflowDataInstances?: Array<{
         ID: string;
         name: string;

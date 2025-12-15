@@ -12,7 +12,7 @@ export interface IRequest<TReqBody> {
 }
 export interface IResponse<TRespBody> {
     body: TRespBody;
-    headers: RawAxiosResponseHeaders | AxiosResponseHeaders | Headers;
+    headers: RawAxiosResponseHeaders | AxiosResponseHeaders;
     status: number;
     statusText?: string;
 }

@@ -10,11 +10,6 @@ export interface IStoreProps {
         name: string;
         tooltip?: string;
     }>;
-    dataSets: Array<{
-        ID: string;
-        name: string;
-        tooltip?: string;
-    }>;
     typeSelectOptions?: IOption[];
     workflowDataInstances?: Array<{
         ID: string;

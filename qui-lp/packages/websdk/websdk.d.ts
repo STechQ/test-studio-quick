@@ -76,7 +76,7 @@ declare class WebsdkContainer {
     private configureLivePreview;
     private getBuildVersion;
     private registerServiceWorker;
-    onSWMessage(packId: string): Promise<void>;
+    onSWMessage(packId: any): Promise<void>;
     sendMessage(msg: any): void;
 }
 declare function init(PlateauUIOptions?: IPlateauUIOptions, environmentInfo?: string): Promise<WebsdkContainer>;
