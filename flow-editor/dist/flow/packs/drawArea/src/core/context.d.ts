@@ -10,10 +10,10 @@ export declare class Context {
     readonly eventHelper: EventHelper<FlowEvents>;
     readonly selectionManager: SelectionManager;
     readonly zuiManager: ZuiManager;
+    readonly stateManager: StateManager;
     readonly objectManager: ObjectManager;
     readonly interactionManager: InteractionManager;
     readonly overlayManager: OverlayManager;
-    readonly stateManager: StateManager;
     constructor();
 }
 //# sourceMappingURL=context.d.ts.map

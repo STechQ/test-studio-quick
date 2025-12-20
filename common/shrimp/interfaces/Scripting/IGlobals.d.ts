@@ -894,6 +894,14 @@ export interface IGlobals_Quick {
     }) => void;
     closeAlert?: () => void;
     host: {
+        /**
+           * @deprecated
+           *
+           * ⚠️❗️**Use quick.container instead of quick.Quick.host.trigger.**
+           *
+           * **See Container Configuration documentation:**
+           * **https://docs.onplateau.com/UI-Screens/UI-Settings/container-configuration**
+         */
         trigger: (functionName: string, params: Record<string, any>) => Promise<IHostResponseData> | undefined;
     };
     isEditMode: boolean;
