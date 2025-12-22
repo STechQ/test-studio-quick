@@ -1587,6 +1587,12 @@ export interface IGlobalsBase {
     webScripts: {};
     workflowStore?: IWorkflowStore;
     workflow?: IGlobals_Workflow; /** !!! DON'T CHANGE */
+    RunBefunc?: ({ befuncId, input }: {
+        befuncId: string;
+        input?: Record<string, any>;
+    }) => Promise<{
+        output: Record<string, any>;
+    }>;
     getConstant: (constantId: string) => Promise<string | undefined>;
     container: {};
 }
