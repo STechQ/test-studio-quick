@@ -77,6 +77,7 @@ export declare const LogCodes: {
     readonly fm2003: "fm-2003";
     readonly fm2004: "fm-2004";
     readonly fm2005: "fm-2005";
+    readonly fm2006: "fm-2006";
     readonly wm2000: "wm-2000";
     readonly wm2001: "wm-2001";
     readonly wm2003: "wm-2003";
