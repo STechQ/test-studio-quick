@@ -12,12 +12,12 @@ export declare class ObjectManager {
     private readonly zuiManager;
     private readonly selectionManager;
     private readonly eventHelper;
-    private readonly stateManager;
     private readonly idCreator;
     private readonly switchIdCreator;
     private pasteOffset;
     private objects;
-    constructor(zuiManager: ZuiManager, selectionManager: SelectionManager, eventHelper: EventHelper<FlowEvents>, stateManager: StateManager);
+    stateManager?: StateManager;
+    constructor(zuiManager: ZuiManager, selectionManager: SelectionManager, eventHelper: EventHelper<FlowEvents>);
     private addSwitchCase;
     private counterSwitchCaseChild;
     returnLeftorRightCaseName(case_: ISwitchCaseExp, direction: "Left" | "Right"): string | undefined;
