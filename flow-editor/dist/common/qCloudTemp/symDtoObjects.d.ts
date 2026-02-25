@@ -250,6 +250,7 @@ export interface IGetModelResponse {
     size?: number;
     version?: string;
     isUnmodifiable?: boolean;
+    usageType?: UsageType;
 }
 export interface IGetMainStatisticInfoResponse {
     mainStatistics: IMainStatisticInfo;

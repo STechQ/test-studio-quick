@@ -353,5 +353,7 @@ export interface ITableData {
     updateStrategy?: string;
     importedVersion?: string;
     unreleased?: boolean;
+    key?: string;
+    prefix?: string;
 }
 //# sourceMappingURL=exporter.d.ts.map

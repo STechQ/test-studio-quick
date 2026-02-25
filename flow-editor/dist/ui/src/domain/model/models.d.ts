@@ -341,6 +341,7 @@ export interface IModelHistoryInfo extends ICloudObject {
     checkouts?: Array<IModelCheckout>;
     usageType?: UsageType;
     dependentModels?: IModelInfo["dependentModels"];
+    path?: string;
 }
 export interface IExtendedModuleItem extends IModule {
     ownerApp?: string;
