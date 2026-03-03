@@ -2,7 +2,6 @@ import { FileUrlCreationRuleName } from "../../jobs/src/application/shared/fileU
 import { IModel, IModule, IWorkflowExportItem } from "../../ui/src/domain/model/models";
 import { IOrganization, IOrganizationCloud } from "./membership";
 import { IApplication, IDependentModel, IModelBodyObject, IOrganizationActions, UsageType } from "./quickCloud";
-import { IModuleExportItem, IUpdateStrategyInfo } from "./symDtoObjects";
 export interface IQCloudBaseResponse<T extends Record<string, any> | void> {
     status: "success" | "customerror" | "permissionError" | "error";
     data: T;
@@ -79,7 +78,7 @@ export interface IExportItem {
     updateDate?: Date;
     dependentModels?: Array<IDependentModel>;
 }
-export type JobType = "export" | "deploy" | "pack" | "appmanagement" | "organizationManagement" | "workflowExport" | "workflowModuleExport";
+export type JobType = "export" | "deploy" | "pack" | "appmanagement" | "organizationManagement" | "workflowExport";
 export type JobCauseType = "download" | "publish";
 export type ExportType = "qui" | "sdk" | "model";
 export type DeployType = "module" | "application";
@@ -109,20 +108,14 @@ export interface IExportJobData extends IJobData {
     fileUrlCreatorRuleName?: FileUrlCreationRuleName;
     modelFileNameSchema?: string;
 }
-export type IWorkflowExportJobData = {
-    type: "app" | "module";
+export interface IWorkflowExportJobData {
+    type?: undefined;
     app: {
         ID: string;
         name: string;
     };
-} & ({
-    type: "app";
     items: Array<IWorkflowExportItem>;
-    updateStrategyInfos?: Array<IUpdateStrategyInfo>;
-} | {
-    type: "module";
-    module: IModuleExportItem;
-});
+}
 export interface IPackJobData extends IExportJobData {
     iamUsage?: boolean;
     platformSelection?: IPlatformSelection;
@@ -349,11 +342,5 @@ export interface ITableData {
     isUnmodifiableTotal?: boolean;
     isCheckedOut?: boolean;
     isModified?: boolean;
-    newModuleVersionAvaliable?: boolean;
-    updateStrategy?: string;
-    importedVersion?: string;
-    unreleased?: boolean;
-    key?: string;
-    prefix?: string;
 }
 //# sourceMappingURL=exporter.d.ts.map

@@ -1,8 +1,6 @@
-import { IStoreMapping } from "../../store/runtimemodels/IStoreMapping";
 import { ITimeSetting } from "./ITimeSetting";
 export type ISLA = {
     selectedSlaModelId?: string;
-    mapping?: IStoreMapping;
 };
 export type ILegacySLA = {
     slaGoal?: ITimeSetting;

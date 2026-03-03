@@ -41,7 +41,7 @@ export interface IPlatformWFEAdaptor {
         gracefulEnd: () => void;
         createDataInstance: () => Promise<DataInstance>;
         generateBusinessKeyWFE: () => Promise<string>;
-        createSLA: (sla: ISLA) => Promise<{
+        createSLA: (slaId: string) => Promise<{
             sla: IWFEDBSLA;
             priority: ITask["priority"];
         }>;
