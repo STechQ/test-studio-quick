@@ -4314,7 +4314,8 @@ nextIcon = 'mdi-plus'}`
     },
     VStepper: {
         qValue: {
-            type: "any"
+            type: "any",
+            editorDefaultValue: "1"
         },
         altLabels: {
             type: Boolean
