@@ -1084,6 +1084,9 @@ var componentOptions = {
         disabled: {
             type: Boolean
         },
+        readonly: {
+            type: Boolean
+        },
         elevation: {
             type: String,
             options: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"]
@@ -1764,7 +1767,13 @@ var componentOptions = {
         visible: {
             type: Boolean,
             editorDefaultValue: "true"
-        }
+        },
+        disabled: {
+            type: Boolean,
+        },
+        readonly: {
+            type: Boolean,
+        },
     },
     VDataIterator: {
         qValue: {
@@ -5204,7 +5213,9 @@ nextIcon = 'mdi-plus'}`
             type: String
         },
         overflow: {
-            type: String
+            type: String,
+            editorDefaultValue: "'visible'",
+            options: ["'visible'", "'hidden'", "'scroll'", "'auto'"]
         },
         tagType: {
             type: String,
@@ -5217,14 +5228,18 @@ nextIcon = 'mdi-plus'}`
             note: "Use to set label text of field"
         },
         textOverflow: {
-            type: String
+            type: String,
+            editorDefaultValue: "'clip'",
+            options: ["'clip'", "'ellipsis'", "'initial'"]
         },
         visible: {
             type: Boolean,
             editorDefaultValue: "true"
         },
         whiteSpace: {
-            type: String
+            type: String,
+            editorDefaultValue: "'pre-wrap'",
+            options: ["'normal'", "'nowrap'", "'pre'", "'pre-line'", "'pre-wrap'"]
         },
         processHtml: {
             type: Boolean,
@@ -5376,8 +5391,11 @@ nextIcon = 'mdi-plus'}`
         tabindex: {
             type: "number | string"
         },
+        enableSecurityScan: {
+            type: Boolean,
+            editorDefaultValue: "true"
+        },
         securityErrorMessage: {
-            editorDefaultValue: "",
             type: String,
         },
         securityErrorMessageIcon: {
@@ -5409,35 +5427,35 @@ nextIcon = 'mdi-plus'}`
         },
         autoplay: {
             type: Boolean,
-            editorDefaultValue: "true"  
+            editorDefaultValue: "true"
         },
         speed: {
             type: Number,
             editorDefaultValue: "1"
         },
-        direction:{
+        direction: {
             type: String,
             options: ["'left'", "'right'"],
             editorDefaultValue: "'right'"
         },
         position: {
             type: String,
-          },
-          zIndex: {
+        },
+        zIndex: {
             type: String,
-          },
-          top: {
+        },
+        top: {
             type: String,
-          },
-          bottom: {
+        },
+        bottom: {
             type: String
-          },
-          left: {
+        },
+        left: {
             type: String,
-          },
-          right: {
+        },
+        right: {
             type: String,
-          }
+        }
     }
 };
 

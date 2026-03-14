@@ -42,6 +42,8 @@ export declare class ComponentCollection implements IComponentCollection {
     private createdFieldsHook;
     private _componentVisibility;
     private _visibilityApplied;
+    private _componentDisabled;
+    private _componentReadonly;
     private compInstanceSetCb?;
     asChildIndex: number;
     compareComponent: boolean;
@@ -86,6 +88,13 @@ export declare class ComponentCollection implements IComponentCollection {
      */
     GetDoryJr(): IDoryJr | undefined;
     SetDoryJr(doryJr: IDoryJr): void;
+    /**
+     * Deferred cascade: when this component (CustomComponent/RenderingComponent)
+     * sits inside a disabled/readonly container (VCard/VContainer), the container's
+     * cascade couldn't reach into this DoryJr's children because they didn't exist yet.
+     * Subscribe to PageJrCompletedHook so we apply cascade once children are ready.
+     */
+    private subscribeDeferredCascade;
     GetCompUID(): string;
     SetComponentStyles(compStyles?: StyleValue): void;
     /**
@@ -101,6 +110,11 @@ export declare class ComponentCollection implements IComponentCollection {
      * @returns void
      */
     watchStyledComponent(compCollection: IComponentCollection): void;
+    private isCascadeContainerType;
+    private applyCascadeToChildren;
+    private setupRuntimeCascadeForContainerProps;
+    private wrapPropWithCascade;
+    private getPropertyDescriptorDeep;
     subscribeOnDestroy(cb: () => void): void;
     onDestroy(): void;
 }
