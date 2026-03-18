@@ -1,6 +1,6 @@
 import { IDoryRenderer } from "../../../../common/shrimp/interfaces/RenderingInterfaces/IRenderer";
 import { IHistoryItem } from "../../../../common/shrimp/interfaces/RenderingInterfaces/IHistoryItem";
-declare type ArrangeAppLayoutArgs = {
+type ArrangeAppLayoutArgs = {
     vapp: HTMLElement;
     renderer?: IDoryRenderer;
     historyItem: IHistoryItem | undefined;
