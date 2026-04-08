@@ -1,8 +1,8 @@
-import { IApplication, IFolder, IModel, IWorkflowExportItem } from "../../ui/src/domain/model/models";
+import { IApplication, IFolder, ILoggedInUser, IModel, IWorkflowExportItem } from "../../ui/src/domain/model/models";
 import { IUserMainInfo, IUser_SUSI } from "./authentication";
 import { IFeedbackAttachment, IUserFeedback } from "./feedback";
 import { IEditorTypes, IOrganization, IOrganizationCalculatedInfo, IOrganizationFeatures } from "./membership";
-import { IApplicationDetails, IApplicationExportSettings, IModelBodyObject, IDependentModel, IOrganizationActions, ModelAdditionals, ObjectID, IModuleBackend, IModuleVersion, ITags, IOrganizationGroup, IModelInfo, ExtensionType, UsageType, AppSettingsModelKeys, AllModelAdditionalTypes, IApplication as IApplicationDbModel, IModelHistoryInfo, IModelCheckout } from "./quickCloud";
+import { IApplicationDetails, IApplicationExportSettings, IModelBodyObject, IDependentModel, IOrganizationActions, ModelAdditionals, ObjectID, IModuleBackend, IModuleVersion, ITags, IOrganizationGroup, IModelInfo, ExtensionType, UsageType, AppSettingsModelKeys, AllModelAdditionalTypes, IApplication as IApplicationDbModel, IModelHistoryInfo, IModelCheckout, ModuleShareType, ModuleShareScope } from "./quickCloud";
 import { IApplicationVersion, IApplicationVersionArtifacts } from "./applicationVersion";
 import { IUserPreferences } from "./userPreference";
 import { IMainStatisticInfo } from "../qCloudTemp/backoffice";
@@ -199,6 +199,7 @@ export interface ICopyApp {
         path: string;
         name: string;
     }>;
+    logoInfo?: IApplicationDbModel["logoInfo"];
 }
 export interface IMissingModule {
     name: string;
@@ -229,6 +230,7 @@ export interface IUpdateModelRequest {
         ID: string;
         version?: string;
     };
+    unversioned?: boolean;
 }
 export interface IUpdateModelResponse {
     ID: string;
@@ -367,7 +369,18 @@ export interface IRelaseModuleRequest {
         version: string;
     }>;
     basedVersion?: string;
+    description?: string;
     unreleased?: boolean;
+}
+export interface IUpdateModulParams {
+    name?: string;
+    description?: string;
+    prefix?: string;
+    ownerUser?: ILoggedInUser;
+    mainOwner?: ObjectID;
+    shareType?: ModuleShareType;
+    applicationID?: string;
+    shareScope: ModuleShareScope;
 }
 export interface IAppendOuterOrg {
     outerOrgId?: string;
