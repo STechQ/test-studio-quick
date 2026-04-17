@@ -44,6 +44,7 @@ export interface ISwimlaneExport {
 export interface IFlowCopy {
     steps: Array<IFlowStepExport>;
     connections: Array<IFlowConnectionExport>;
+    swimlanes?: Array<ISwimlaneExport>;
 }
 export interface IFlowStepSwimlane {
     stepId?: string;

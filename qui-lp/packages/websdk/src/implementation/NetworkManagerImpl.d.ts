@@ -14,7 +14,6 @@ export default class NetworkManagerImpl implements INetworkManager {
     constructor(contextName: string, settingsWrapper: IWebSDKSettingsWrapper, servicesWrapper: IContainerServicesWrapper, storeManager: StoreManager);
     checkPlateauIAM(qjson: any): Promise<void>;
     private getConfiguration;
-    getServicesWrapper(): IContainerServicesWrapper;
     private manageOtherDomains;
     private urlDecider;
     private getUrl;

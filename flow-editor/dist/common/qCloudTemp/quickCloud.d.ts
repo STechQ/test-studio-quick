@@ -28,7 +28,6 @@ export type AllCreateObjectTypes = ModelType | FolderObjectType | ModuleObjectTy
 export type AppSettingsModelKeys = "settings" | "componentList" | "containerServices" | "pipeline" | "alert" | "loading" | "globalLocalization" | "localProxy" | "style" | "rootqjson" | "asset" | "appSettings" | "containerServIntelli" | "theme" | "container" | "constant";
 export type ExtensionType = "png" | "jpg" | "jpeg" | "svg" | "gif" | "json" | "woff" | "woff2" | "ttf" | "otf";
 export type ModuleShareType = 'reference' | 'version';
-export type ModuleShareScope = "Organization" | "Organization Group";
 export declare const UISettingsType: {
     readonly alert: "alert";
     readonly pipeline: "pipeline";
@@ -139,7 +138,6 @@ export interface IModuleBackend extends ICloudObject {
     applicationID?: string;
     ownerOrg?: IModuleOwnerOrgInfo;
     origInfo?: IModuleOrigInfo;
-    shareScope?: ModuleShareScope;
 }
 export interface IModuleVersion extends ICloudObject {
     moduleID: ObjectID;
@@ -188,8 +186,6 @@ export interface IModelInfo extends ICloudObject {
      */
     modelID?: string;
     version?: string;
-    editingVer?: string;
-    unversioned?: boolean;
     isUnmodifiable?: boolean;
     overriddenModel?: {
         ID: string;
@@ -381,9 +377,6 @@ export interface ITreeviewItem {
     key?: string;
     migrated?: boolean;
     origInfo?: IModuleOrigInfo | IModelOrigInfo;
-    shareScope?: ModuleShareScope;
-    editingVer?: string;
-    unversioned?: boolean;
 }
 export interface IScreenItem {
     id: string;

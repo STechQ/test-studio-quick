@@ -7,7 +7,6 @@ interface ISLAProps {
     availableSlaModels: {
         name: string;
         value: string;
-        tooltip?: string;
     }[];
     constants: {
         name: string;

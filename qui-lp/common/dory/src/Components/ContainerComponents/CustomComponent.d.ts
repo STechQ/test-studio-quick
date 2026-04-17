@@ -26,6 +26,8 @@ export default class CustomComponent extends TSComponentBase implements IDynamic
     protected displayCb: PartialDisplayHookCb | undefined;
     private compQJson?;
     private eventCompletionPromise?;
+    private deferredRenderTimer?;
+    private isDestroyed;
     depTree: Record<string, {
         instanceHolder: IContextTargetInst;
         field: string;
@@ -44,6 +46,7 @@ export default class CustomComponent extends TSComponentBase implements IDynamic
     setDisabled(v: boolean): void;
     protected destroyInner(): void;
     Render(tsWrapperInstance?: any, pageId?: string, pageName?: string): unknown;
+    private scheduleFetchAndRender;
     private fetchAndRender;
     private OutBoundProps;
     private applyPropertyToChildComponents;

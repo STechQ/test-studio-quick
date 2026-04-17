@@ -9,7 +9,6 @@ export type IHumanTaskPropType = IPropObject & {
     actions: Array<IAction>;
     sendTo?: "swimlane" | "user";
     user?: string;
-    stepIdToShow?: string;
     swimlane?: string;
     priority?: number;
     sla?: ISLA;

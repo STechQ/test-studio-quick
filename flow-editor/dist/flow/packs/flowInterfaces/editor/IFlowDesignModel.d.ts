@@ -14,11 +14,13 @@ export interface IOldCamundaFieldsForWFModel {
     sla: ILegacySLA;
     priority: number;
 }
-export interface IFlowCopyModel extends IFlowCoreModel {
+export interface IFlowCopyModel {
     name?: string;
     _name?: string;
     label?: IExpressionData;
     description?: string;
+    steps: Array<IStepDesignModel>;
+    connections: Array<IConnectionDesignModel>;
     swimlanes?: Record<string, ISwimlaneDesignModel>;
     roles?: Record<string, IRoleDesignModel>;
     store: Store;
@@ -30,9 +32,5 @@ export interface IFlowCopyModel extends IFlowCoreModel {
     executeType: FlowExecutionType;
     uniqueKey?: IExpressionData;
     oldCamundaFieldsForWFModel?: IOldCamundaFieldsForWFModel;
-}
-export interface IFlowCoreModel {
-    steps: Array<IStepDesignModel>;
-    connections: Array<IConnectionDesignModel>;
 }
 //# sourceMappingURL=IFlowDesignModel.d.ts.map

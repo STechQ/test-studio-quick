@@ -134,7 +134,6 @@ type ModelVisualInfo = {
     activeSrc: string;
 };
 export declare class ModelContants {
-    static getModelDisplayName(modelType: ModelType, modelAdditionals?: ModelAdditionals, modelKey?: string): string;
     static getModelVisualInfo(modelType: ModelType | ModuleObjectType | "folder", modelAdditionals: ModelAdditionals | undefined): ModelVisualInfo;
     static getModelBodyKeys(modelType: ModelType): string | string[] | undefined;
 }

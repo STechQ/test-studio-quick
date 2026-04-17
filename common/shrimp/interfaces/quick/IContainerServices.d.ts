@@ -65,7 +65,6 @@ export interface INetwork {
         options?: IRequestOptions;
         requestCanBeLoggedByName?: boolean;
     }): Promise<INetworkResponse<RetType>>;
-    getServicesWrapper?(): IContainerServicesWrapper;
 }
 export interface IContainerServicesWrapper {
     services: IContainerServices;
@@ -104,6 +103,5 @@ export interface IContainerServices {
     getCurrentRegionCb?: () => string | undefined;
     getDeviceIdCb?: () => string | undefined;
     navigationManager?: INavigationManager;
-    getChannel?(): string | undefined;
 }
 //# sourceMappingURL=IContainerServices.d.ts.map
