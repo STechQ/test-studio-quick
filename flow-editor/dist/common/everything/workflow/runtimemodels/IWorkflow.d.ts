@@ -88,6 +88,10 @@ export interface ICounterPropType extends IPropObject {
     assignTo: ISetExpressionData;
 }
 export type StepFlowModelPropType = IWFStepInlineFlowModelProps | IExecuteFlowByMapping;
+export type StepSubWorkflowPropType = {
+    workflowId: string;
+    mapping?: IStoreMapping;
+};
 export type IWFStepInlineFlowModelProps = {
     type: 'inline';
     inline: IFlowModel;
