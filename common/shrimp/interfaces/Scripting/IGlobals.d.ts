@@ -1560,6 +1560,7 @@ export interface IGlobalsBase {
     getArrangedNestedData(obj: object, pairChar: string): {};
     getFormData(componentQID?: string): {};
     getArrangedFormData(formData: object, pairChar: string): {};
+    bind: (field: string) => any;
     Quick: IGlobals_Quick;
     containerServices?: IGlobals_ContainerServices;
     sso: IGlobals_sso;
