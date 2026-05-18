@@ -7,7 +7,7 @@ import { IFlowModelBase } from "@stechquick/flow-interfaces/runtime/IFlowModel";
 import { ILegacySLA, ISLA } from "./ISLA";
 import { IAction } from "../runtimeObjects/IAction";
 import { OmitTyped } from "../../../helpers/typeHelper";
-export type WorkflowStepName = "start" | "humantask" | "subFlow" | "flow" | "switch" | "end";
+export type WorkflowStepName = "start" | "humantask" | "subFlow" | "subWorkflow" | "flow" | "switch" | "end";
 declare const userTaskActivityFieldName = "userTaskActivity";
 export declare const NamedModels: {
     readonly getUser: {
