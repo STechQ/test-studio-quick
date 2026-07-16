@@ -4,6 +4,7 @@ import { IDictionary } from "../../../../shrimp/interfaces/IDictionary";
 import { IGlobalsQS } from "../../../../shrimp/interfaces/Scripting/IGlobals";
 import { Dory } from "../../Dory";
 import { MessagingManager } from "../MessagingManager";
+export declare function isIgnoredStoreProxyProp(prop: string): boolean;
 export declare class QSProxy {
     functionDict: IDictionary<Function>;
     CreateMethodProxy(func: Function): void;
@@ -23,6 +24,5 @@ export declare class QsProxyGenerator {
     private createTrackedStoreValue;
     private createNestedBindingPath;
     private getStoreProxyPathSegment;
-    private isIgnoredStoreProxyProp;
 }
 //# sourceMappingURL=QsProxy.d.ts.map

@@ -46,7 +46,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     willAttach: boolean;
     textFieldClass: string;
     _renderingProps: any;
-    hideDetails: string | boolean;
 }>;
 export default _default;
 //# sourceMappingURL=VInlineTimePicker.vue.d.ts.map

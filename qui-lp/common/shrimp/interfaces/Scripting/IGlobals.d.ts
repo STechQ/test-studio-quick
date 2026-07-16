@@ -602,11 +602,9 @@ export interface IGlobals_Quick {
    */
     deleteComponent: (componentInstance: IComponent | IDomElement) => void;
     /**
-     * Declares legacy store dependencies for the provided fields.
+     * Establishes a two-way binding between a specified object and the provided fields, automatically updating related fields when changes occur.
      *
-     * @deprecated Use quick.bind(store.some.path) for two-way binding. See https://docs.onplateau.com/UI-Screens/Logic/two-way-binding
-     *
-     * @param options - Configuration options for declaring store dependencies.
+     * @param options - Configuration options for establishing the two-way binding.
      * @param options.bindedObject - The identifier for the object to be bound (e.g., "page", "bag", "global").
      * @param options.fields - An array of field names or an object specifying the fields to be bound.
      * @returns {void}
