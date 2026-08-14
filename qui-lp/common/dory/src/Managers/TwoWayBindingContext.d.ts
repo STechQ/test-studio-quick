@@ -1,4 +1,5 @@
 import { ContextManager, IContextItem } from "../../../shrimp/context";
+import { IComponentCollection } from "../../../shrimp/interfaces/ComponentInterfaces/IComponentCollection";
 import { IContextDepTarget } from "../../../shrimp/interfaces/quick/IStore";
 import { IStoreBindingPath } from "./StoreManager";
 export declare class TwoWayBindingContext implements IContextItem {
@@ -16,6 +17,10 @@ export declare class TwoWayBindingContext implements IContextItem {
     hasDeclaredBinding(bindingPath: IStoreBindingPath): boolean;
     hasNestedBindingForRoot(storeName: string): boolean;
     getDeclaredBindingsForRoot(storeName: string): IStoreBindingPath[];
+    getStoreUpdateTargetFields({ compCollection, propName }: {
+        compCollection: IComponentCollection;
+        propName: string;
+    }): string[];
     registerBindingPath({ bindingPath, depTarget }: {
         bindingPath: IStoreBindingPath;
         depTarget?: IContextDepTarget;
