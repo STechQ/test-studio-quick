@@ -29,7 +29,7 @@ export declare class TwoWayBindingContext implements IContextItem {
     private attachWatcherForCurrentInstance;
     private attachWatcher;
     private writeBackBindingValue;
-    private watchComponentChangeEvent;
+    private watchComponentValueEvent;
     private disposeBinding;
     private getBindingKey;
     private isTwoWayBindableProp;
