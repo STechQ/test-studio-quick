@@ -7,6 +7,7 @@ export declare class TwoWayBindingContext implements IContextItem {
     static ContextName: string;
     contextName: string;
     private static readonly changeEventValueComponents;
+    private static readonly silentValueUpdateComponents;
     private readonly bindings;
     private readonly declaredBindings;
     private readonly declaredBindingsByRoot;
