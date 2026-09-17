@@ -51,7 +51,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     validate(): any;
     resetValidation(): void;
 }, {
-    getPhoneMask: string;
+    getPhoneMask: () => (string | RegExp)[];
 }, {
     countryCodeAppendIcon: string;
     phoneAppendIcon: string;
