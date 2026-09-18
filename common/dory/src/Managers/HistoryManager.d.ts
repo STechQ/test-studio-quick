@@ -53,6 +53,8 @@ export declare class HistoryManager implements IHistoryManager, IContextItem {
     getNavDemand(pageId: string): INavigationDemand | null;
     getCreaterRenderingComponent(): import("../../../shrimp/interfaces/ComponentInterfaces/IComponentCollection").IComponentCollection | undefined;
     getRootHM(): HistoryManager;
+    /** One step up in the creator chain; undefined when this HM is the root. */
+    getParentHM(): HistoryManager | undefined;
     GetCompUIDPrefix(): string;
     static traverseUpwards(retVal: Array<string>, historyItem: HistoryItem | null | undefined): Array<string>;
 }

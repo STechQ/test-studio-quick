@@ -1428,6 +1428,60 @@ export interface IGlobals_sso {
         onFail: string;
     }) => void;
 }
+export interface IGlobals_studio {
+    /**
+     * Studio tag values keyed by tag label.
+     *
+     * @example
+     * const channel = quick.studio.tags['Channel'];
+     */
+    tags: Record<string, string>;
+    /** Application info. */
+    app: {
+        name?: string;
+        id?: string;
+    };
+    /**
+     * Model (page) info.
+     *
+     * @example
+     * quick.studio.model.name;
+     * quick.studio.model.id;
+     */
+    model: {
+        name?: string;
+        id?: string;
+    };
+    /**
+     * The page rendered directly under the root page (e.g. the RenderingComponent's
+     * current qjsonPath target), resolved at runtime.
+     *
+     * @example
+     * quick.studio.parentModel.name;
+     * quick.studio.parentModel.tags['ACICode'];
+     */
+    parentModel?: {
+        name?: string;
+        tags?: Record<string, string>;
+    };
+    /**
+     * Outermost (root) page's model info, resolved at runtime.
+     *
+     * @example
+     * quick.studio.rootModel.name;
+     * quick.studio.rootModel.tags['ACICode'];
+     */
+    rootModel?: {
+        name?: string;
+        tags?: Record<string, string>;
+    };
+    /** Organization info. */
+    org: {
+        name?: string;
+    };
+    /** Organization group name. */
+    orgGroupName?: string;
+}
 export interface IGlobals_currentPage {
     /**
      * Checks if the rendering process has been completed.
@@ -1596,6 +1650,16 @@ export interface IGlobalsBase {
     }>;
     getConstant: (constantId: string) => Promise<string | undefined>;
     container: {};
+    /**
+     * Studio metadata (tags, app, model, org info) injected into the qjson on export.
+     *
+     * @example
+     * quick.studio.app.name;
+     * quick.studio.model.id;
+     * quick.studio.org.name;
+     * quick.studio.orgGroupName;
+     */
+    studio: IGlobals_studio;
 }
 export interface IGlobals_Workflow {
     RunFunction: ({ flowId, input, dataInstance, consumer, externalConsumerProps }: {

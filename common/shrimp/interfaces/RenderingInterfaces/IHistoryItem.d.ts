@@ -1,5 +1,6 @@
 import { IComponent } from "../ComponentInterfaces/IComponent";
 import { IComponentCollection } from "../ComponentInterfaces/IComponentCollection";
+import { IQJsonStudio } from "../ComponentInterfaces/IQJson";
 import { IMasterData } from "./IMasterData";
 import { IRenderingContext } from "./IRenderingContext";
 import { IRenderingManager } from "./IRenderingManager";
@@ -35,5 +36,6 @@ export interface IHistoryItem {
     findHistoryItem(cb: (cbParam: IForeachHistoryItemCbParams) => boolean, nestLevel?: number): IHistoryItem | undefined;
     getCompCollectionById(id: string | IComponent): IComponentCollection | undefined;
     getOtelDiag(): string | undefined;
+    getStudio(): IQJsonStudio | undefined;
 }
 //# sourceMappingURL=IHistoryItem.d.ts.map

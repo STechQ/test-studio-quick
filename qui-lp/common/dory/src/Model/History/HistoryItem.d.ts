@@ -1,7 +1,8 @@
 import { ContextManager } from "../../../../shrimp/context";
 import { IComponent } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponent";
 import { IComponentCollection } from "../../../../shrimp/interfaces/ComponentInterfaces/IComponentCollection";
-import { IQJSon } from "../../../../shrimp/interfaces/ComponentInterfaces/IQJson";
+import { IQJSon, IQJsonStudio } from "../../../../shrimp/interfaces/ComponentInterfaces/IQJson";
+import { IGlobals_studio } from "../../../../shrimp/interfaces/Scripting/IGlobals";
 import { IDictionary } from "../../../../shrimp/interfaces/IDictionary";
 import { IDomElement } from "../../../../shrimp/interfaces/RenderingInterfaces/IDomElement";
 import { IDoryJr } from "../../../../shrimp/interfaces/RenderingInterfaces/IDoryJr";
@@ -83,6 +84,13 @@ export declare class HistoryItem implements IHistoryItem {
     getQLang(): ScriptLang | undefined;
     getOtelDiag(): string | undefined;
     getOtelChannel(): string | undefined;
+    getStudio(): IQJsonStudio | undefined;
+    /**
+     * Builds the full `quick.studio` shape for this page.
+     * `rootModel` comes from the outermost (root) page; `parentModel` from the page rendered
+     * directly under the root (e.g. the RenderingComponent's current qjsonPath target).
+     */
+    getStudioGlobal(): IGlobals_studio;
     GetRenderingContext(): RenderingContext;
     GetDoryJrs(): DoryJr[] | null;
     GetRenderingManager(): IRenderingManager | undefined;

@@ -5,7 +5,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     vuetifyDateFormat: string;
     valueInternal: string | string[] | null;
     internalValue: any;
-    stopProgrammaticEvent: boolean;
     dateFormatted: string;
     menu1: boolean;
     idTest: string | null;
@@ -15,7 +14,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     uniqueID: string;
     textFieldClass: string;
 }, {
-    setProgrammaticValue(value: any): void;
     resurrect(): void;
     changeMenuValue(): void;
     onKeyUp(event: any): void;

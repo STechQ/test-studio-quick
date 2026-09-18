@@ -6,8 +6,7 @@ export declare class TwoWayBindingContext implements IContextItem {
     private readonly context;
     static ContextName: string;
     contextName: string;
-    private static readonly valueEvents;
-    private static readonly silentValueUpdateComponents;
+    private static readonly changeEventValueComponents;
     private readonly bindings;
     private readonly declaredBindings;
     private readonly declaredBindingsByRoot;
@@ -29,7 +28,7 @@ export declare class TwoWayBindingContext implements IContextItem {
     private attachWatcherForCurrentInstance;
     private attachWatcher;
     private writeBackBindingValue;
-    private watchComponentValueEvent;
+    private watchComponentChangeEvent;
     private disposeBinding;
     private getBindingKey;
     private isTwoWayBindableProp;

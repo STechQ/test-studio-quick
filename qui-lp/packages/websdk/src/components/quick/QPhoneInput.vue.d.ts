@@ -25,6 +25,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     }[];
     phoneNumber: string | undefined;
     inputKey: number;
+    isProgrammaticChange: boolean;
     phoneData: {
         countryPhoneNumber: string;
         phoneNumber: string;
@@ -44,6 +45,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     setMaxLength(countryCode: CountryCode | undefined): void;
     changePhone(): void;
     changeCountryCode(): void;
+    inputPhone(): void;
     itemText: (item: any) => string;
     getCountryDialCode(countryAlpha2Code: any): string | null;
     phoneNumberInput(): void;
@@ -51,7 +53,7 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     validate(): any;
     resetValidation(): void;
 }, {
-    getPhoneMask: () => (string | RegExp)[];
+    getPhoneMask: string;
 }, {
     countryCodeAppendIcon: string;
     phoneAppendIcon: string;

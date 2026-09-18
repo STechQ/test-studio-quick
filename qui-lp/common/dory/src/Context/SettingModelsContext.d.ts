@@ -3,6 +3,7 @@ import { Hook } from "../../../shrimp/helpers/hook";
 import { IQJSon } from "../../../shrimp/interfaces/ComponentInterfaces/IQJson";
 import { IDory } from "../../../shrimp/interfaces/RenderingInterfaces/IDory";
 import { ISettingModelsContext } from "../../../shrimp/interfaces/RenderingInterfaces/IRenderer";
+import { IGlobals_studio } from "../../../shrimp/interfaces/Scripting/IGlobals";
 import { IContainerModel } from "@stechquick/algae/lib/quick/IContainerModel";
 export declare class SettingModelsContext implements ISettingModelsContext, IContextItem {
     static ContextName: string;
@@ -15,10 +16,14 @@ export declare class SettingModelsContext implements ISettingModelsContext, ICon
     private loadingQjson?;
     private hostTriggerModel?;
     private dory;
+    /** Studio info of the page that triggered the current in-flight request; consumed by the pipeline's `quick.studio`. */
+    private requestOriginStudio?;
     constructor({ context, dory }: {
         context: ContextManager;
         dory: IDory;
     });
+    SetPipelineRequestStudio(studio: IGlobals_studio | undefined): void;
+    GetPipelineRequestStudio(): IGlobals_studio | undefined;
     SetPipelineQjson(qjson: IQJSon): Promise<void>;
     GetPipelineQjson(): IQJSon | undefined;
     private renderQJson;
