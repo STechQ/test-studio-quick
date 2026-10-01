@@ -1,6 +1,7 @@
 import { FileUrlCreationRuleName } from "../../jobs/src/application/shared/fileUrlCreator";
 import { IModel, IModule, IWorkflowExportItem } from "../../ui/src/domain/model/models";
-import { IOrganization, IOrganizationCloud } from "./membership";
+import { ICloudProviderPublishTypeDeployables } from "../clean/domain/useCases/ICloudProviderPublish";
+import { IOrganization } from "./membership";
 import { IApplication, IDependentModel, IModelBodyObject, IOrganizationActions, UsageType } from "./quickCloud";
 import { IModuleExportItem, IUpdateStrategyInfo } from "./symDtoObjects";
 export interface IQCloudBaseResponse<T extends Record<string, any> | void> {
@@ -183,7 +184,7 @@ export interface IBuildInformation {
     name: string;
     version: string;
 }
-export type IEnvironment = IGitlabEnvironment | IAWSLambdaEnvironment | IAzureEnvironment;
+export type IEnvironment = IGitlabEnvironment | IAWSLambdaEnvironment | IServerDecidedEnvironment;
 export interface IGitlabEnvironment {
     type: "gitlab";
     params: IGitlabEnvironmentParams;
@@ -202,9 +203,8 @@ export interface IAWSLambdaEnvironment {
         secretAccessKey: string;
     };
 }
-export interface IAzureEnvironment {
-    type: "azure";
-    envID: string;
+export interface IServerDecidedEnvironment {
+    type: "serverDecided";
 }
 export interface IDeployJobItem {
     deployObjectID: string;
@@ -294,19 +294,26 @@ export interface IExportJobStepDbItem {
 export interface IArtifactMinioDetails {
     objectName: string;
 }
-export interface IArtifactInfoDBItem {
+export interface IArtifactApiDetails {
+    objectName: string;
+}
+export type IArtifactInfoDBItem = {
     ID: IQcloudJob["jobID"] | IQcloudJob["groupID"];
     name: string;
     type: "web";
+} & ({
+    source: "api";
+    details: IArtifactApiDetails;
+} | {
     source: "minio";
     details: IArtifactMinioDetails;
-}
+});
 export interface IInitJobHistoryRequest {
     ID: string;
     appID: string;
     isMultiStep: boolean;
     type: "publish" | "download";
-    cloudProvider?: keyof IOrganizationCloud;
+    cloudProvider?: ICloudProviderPublishTypeDeployables;
     platform?: IPlatformSelection;
 }
 export interface IExportJobHistoryDbItem extends Omit<IInitJobHistoryRequest, "appID"> {

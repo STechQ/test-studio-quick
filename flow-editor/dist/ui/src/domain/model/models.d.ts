@@ -332,7 +332,7 @@ export interface IExportJobArtifactInfoItem {
     ID: string;
     name: string;
     type: IArtifactInfoDBItem["type"];
-    source: "minio";
+    source: IArtifactInfoDBItem["source"];
     details: IArtifactMinioDetails;
 }
 export type ModelHistoryType = "update" | "delete" | "checkin" | "publish" | "ownerItemDelete";
