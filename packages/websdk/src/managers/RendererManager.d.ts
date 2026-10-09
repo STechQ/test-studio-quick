@@ -39,5 +39,6 @@ export declare class RendererManager {
     setEnvironment(env: any): void;
     setYamlLogType(logType: string): void;
     setThemes(themeSettings: IThemeSettings | undefined): void;
+    setTwoWayBindingEnabled(enabled: boolean): void;
 }
 //# sourceMappingURL=RendererManager.d.ts.map
